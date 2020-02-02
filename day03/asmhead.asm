@@ -28,10 +28,6 @@ VRAM    EQU     0x0ff8  ; グラフィックバッファの開始番地
         INT     0x16
         MOV     [LEDS],AL
 
-fin:
-        HLT
-        JMP     fin
-
 
 
 ; PICが一切の割り込みを受け付けないようにする
