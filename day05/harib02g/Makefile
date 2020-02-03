@@ -1,0 +1,38 @@
+default :
+	make clean
+
+ipl10.bin : ../ipl10.asm Makefile
+	nasm ../ipl10.asm -o ipl10.bin -l ipl10.lst
+
+asmhead.bin : ../asmhead.asm Makefile
+	nasm ../asmhead.asm -o asmhead.bin -l asmhead.lst
+
+nasmfunc.o : ../nasmfunc.asm Makefile
+	nasm -g -f elf ../nasmfunc.asm -o nasmfunc.o
+
+hankaku.o: ../hankaku.c
+	gcc -c -m32 -o hankaku.o ../hankaku.c
+
+mysprintf.o: mysprintf.c
+	gcc -c -m32 -fno-pic -fno-stack-protector -o mysprintf.o mysprintf.c
+
+bootpack.hrb : ../har.ld bootpack.c hankaku.o mysprintf.o nasmfunc.o Makefile
+	gcc -march=i486 -m32 -nostdlib -fno-pic -fno-stack-protector -T ../har.ld bootpack.c mysprintf.o hankaku.o nasmfunc.o -o bootpack.hrb
+
+haribote.sys : asmhead.bin bootpack.hrb Makefile
+	cat asmhead.bin bootpack.hrb > haribote.sys
+
+haribote.img : ipl10.bin haribote.sys Makefile
+	mformat -f 1440 -C -B ipl10.bin -i haribote.img ::
+	mcopy -i haribote.img haribote.sys ::
+	mv haribote.img ../../
+
+asm :
+	make -r ipl10.bin
+
+img :
+	make -r haribote.img
+
+clean :
+	make -r haribote.img
+	rm *.bin *.lst *.hrb *.sys *.o
