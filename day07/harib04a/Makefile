@@ -1,8 +1,5 @@
 CFLAGS = -march=i486 -m32 -nostdlib -fno-pic -fno-builtin -fno-stack-protector
 OBJS = bootpack.c nasmfunc.o ../hankaku.c ../mysprintf.c ../dsctbl.c ../graphic.c int.c
-OSNAME   = helloOS
-IMGNAME  = ../../haribote.img
-VBOX     = /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe
 
 default :
 	make img
@@ -39,20 +36,3 @@ img :
 
 clean :
 	rm *.bin *.lst *.hrb *.sys *.o
-
-# VirtualBox
-vdel:
-	$(VBOX) unregistervm $(OSNAME) --delete
-
-vrun:
-	$(VBOX) createvm --name $(OSNAME) --ostype Other --register
-	$(VBOX) modifyvm $(OSNAME) --memory 32
-	$(VBOX) storagectl $(OSNAME) --name Floppy --add floppy
-	$(VBOX) storageattach $(OSNAME) --storagectl Floppy --device 0 --medium $(IMGNAME)
-	$(VBOX) startvm $(OSNAME)
-
-run :
-	make img
-	make clean
-	make vdel
-	make vrun

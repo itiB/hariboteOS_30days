@@ -58,3 +58,12 @@
   - ![image](https://pbs.twimg.com/media/EP8Hm3TX0AE7UD1.png)
   - `nasmfunc.asm`の`io_in32:`が間違っていたので書き換え
   - `dsctbl.c`の中のアドレスを定数宣言した値にすべて書き換えたらうまく動いた！
+
+## 7日目
+
+- a なんかキーボードがリリースされないんだけど...
+  - なおった
+- VirtualboxをCUIから起動できる用にした
+  - <https://qiita.com/apatchk/items/8b1029ceaee60d3e18a2>
+  - imageが無かったエラるのどうにかしたいよねー
+  - `/mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe list vms | grep helloOS`

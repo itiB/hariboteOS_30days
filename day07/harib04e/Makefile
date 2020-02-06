@@ -1,5 +1,5 @@
 CFLAGS = -march=i486 -m32 -nostdlib -fno-pic -fno-builtin -fno-stack-protector
-OBJS = bootpack.c nasmfunc.o ../hankaku.c ../mysprintf.c ../dsctbl.c ../graphic.c int.c
+OBJS = bootpack.c nasmfunc.o ../hankaku.c ../mysprintf.c ../dsctbl.c ../graphic.c int.c fifo.c
 OSNAME   = helloOS
 IMGNAME  = ../../haribote.img
 VBOX     = /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe
