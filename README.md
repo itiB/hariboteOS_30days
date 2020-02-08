@@ -67,3 +67,13 @@
   - <https://qiita.com/apatchk/items/8b1029ceaee60d3e18a2>
   - imageが無かったエラるのどうにかしたいよねー
   - `/mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe list vms | grep helloOS`
+
+## 8日目
+
+マウス動くようになった！！！やったね
+
+## 9日目
+
+- 2(harib06b)
+  - なんか筆者はうまく出なかったらしいけど...うまく32MBって出るわ
+  - gccのなんかっぽいしつぎのcはとばそう
