@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 // メモリの容量をチェックする
 unsigned int memtest(unsigned int start, unsigned int end) {

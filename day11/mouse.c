@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 // マウスの有効化
 void enable_mouse(struct MOUSE_DEC *mdec) {

@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 /*
  * PICの初期化(Programmable interrupt controller)

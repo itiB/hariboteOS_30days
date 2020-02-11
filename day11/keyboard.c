@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 // キーボードコントローラがデータ送信可能になるのを待つ(制御回路)
 void wait_KBC_sendready(void) {

@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 void set_palette(int start, int end, unsigned char *rgb) {
     int i, eflags;

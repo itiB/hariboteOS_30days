@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 void init_gdtidt(void) {
     // // とりあえず0x270000-0x27ffff番地をGDTにする

@@ -1,4 +1,4 @@
-#include "harib08a/bootpack.h"
+#include "bootpack.h"
 
 // 初期化関数
 void fifo8_init(struct FIFO8 *fifo, int size, unsigned char *buf) {
