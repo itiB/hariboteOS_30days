@@ -94,3 +94,4 @@
   - Memory.cがすこし間違ってたため書き換えた．
   - 結局理由はBootpack.cの`init_pit()`と書くべきところを`init_pic()`って書いていたからだった
 - Mouse_coursor -> mouse_cursor
+- ポケモンしてたら一日過ぎてた，遅れがでてしまった...HOME解禁日だったんや...ﾕﾙｼﾃﾕﾙｼﾃ...
