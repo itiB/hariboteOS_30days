@@ -110,7 +110,7 @@ void inthandler20(int *esp) {
     // i個目のタイマがタイムアウトしたからずらす
     timerctl.t0 = timer;
     // timerctl.nextの設定
-    timerctl.next = timer->timeout;
+    timerctl.next = timerctl.t0->timeout;
     // 全部の処理が終わってからタスクswitchしないと割り込みが混線する
     if (ts != 0) {
         mt_taskswitch();
