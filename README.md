@@ -142,3 +142,15 @@
   - ちょっと時間が遅くなってしまったので明日本格的に操作し始めたらやってみよう
   - できた！Appが入るように変更
   - <https://github.com/2GMon/hariboteOS4Linux>
+
+## 19日目
+
+- HariboteSYS: 20 -> clustno: 0x0002 -> 0x004200
+- clustno * 512 + 0x003e00
+- BOOTPACKC: 20 -> clustno: 0x002E -> 0x5c00 + 0x003e00 = 0x9a00
+  - `#include "bootp` ビンゴ！
+- strncmp 作る．
+- どうやらうちのharibは0x02E(47番)まで入っているみたい
+- ディレクトリ構成をeから変え始める，まぁエラーみれば直せると思うので..
+- hlt.hrbは無理やり突っ込んでいる
+  - forとかで一気に入れられる方法探して変えたい
