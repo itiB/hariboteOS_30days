@@ -140,3 +140,5 @@
   - <https://github.com/kamaboko123/30daysOS/blob/develop/tools/stdlibc/src/stdlibc.c>
 - imgのなかにファイルをいれるの...どうやるんだろう書き換えちゃえばいいのかな...
   - ちょっと時間が遅くなってしまったので明日本格的に操作し始めたらやってみよう
+  - できた！Appが入るように変更
+  - <https://github.com/2GMon/hariboteOS4Linux>

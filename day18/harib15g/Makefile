@@ -5,6 +5,7 @@ OSNAME   = helloOS
 IMGNAME  = ../../haribote.img
 VBOX     = /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe
 NASMFILE = ../nasmfunc.asm
+APP = bootpack.c
 
 default :
 	make img
@@ -31,6 +32,7 @@ haribote.sys : asmhead.bin bootpack.hrb Makefile
 haribote.img : ipl10.bin haribote.sys Makefile
 	mformat -f 1440 -C -B ipl10.bin -i haribote.img ::
 	mcopy -i haribote.img haribote.sys ::
+	mcopy $(APP) -i $@ ::
 	mv haribote.img ../../
 
 asm :
