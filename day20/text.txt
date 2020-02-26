@@ -1,0 +1,4 @@
+hariboteOS file
+2line
+3line	tab	tab
+4line

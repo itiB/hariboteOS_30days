@@ -199,10 +199,12 @@ farcall:  ; void farcall(int eip, int cs);
 ; 一文字表示API
 asm_cons_putchar:
     STI                     ; 割り込みとして処理するため入力とかできなくなっているのを解除
+    PUSHAD
     PUSH    1
     AND     EAX, 0xff       ; AHやEAXの上位を0にしてEAXに文字が入った状態にする
     PUSH    EAX
     PUSH    DWORD [0xfec]   ; メモリの内容を読み込んでその値をPush(console.c/console_task())
     CALL    cons_putchar
     ADD     ESP, 12
+    POPAD
     IRETD                   ; 割り込みでAPIを処理するため戻るときはIRETD
