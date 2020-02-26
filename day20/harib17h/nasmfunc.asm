@@ -216,6 +216,6 @@ asm_hrb_api:
     PUSHAD                  ; 保存のためにPUSH
     PUSHAD                  ; hrb_apiに渡すためのPUSH
     CALL    hrb_api
-    ADD     ESP, 12
+    ADD     ESP, 32
     POPAD
     IRETD                   ; 割り込みでAPIを処理するため戻るときはIRETD

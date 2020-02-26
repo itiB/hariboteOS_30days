@@ -34,7 +34,7 @@ extern void store_cr0(int cr0);
 extern void load_tr(int tr);
 extern void farjmp(int eip, int cs);
 extern void farcall(int eip, int cs);
-extern void asm_hrb_api();
+extern void asm_hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int eax);
 
 // dsctbl.c
 struct SEGMENT_DESCRIPTOR {         // Global (segment) descriptor table
