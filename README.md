@@ -167,3 +167,8 @@
 - 参考にさせていただいたGitHub <https://github.com/yusei-wy/HariboteOS>
 - ~~`h`も動きませんでした...ごめんなさい，次の日に修正があるらしいのでそれ次第で...~~
   - わかりました！！！`nasmfunc.asm`でADDしてESPをすすめるところを進める数を間違えていました
+  - 参考にさせていただいた <https://github.com/2GMon/hariboteOS4Linux>
+- dは...異常終了するけど...qemuじゃないしなぁきっとうまくいってると信じて進むか
+- eの時点でうまくコンソールに文字表示できたぞ？？やっぱVirtualBox最強！
+- gがどんなアプリを動かそうとしても止まっちゃう
+  - `nasmfunc.asm`の`start_app()`で`RETF`を`RFTF`ってタイポしてた...
