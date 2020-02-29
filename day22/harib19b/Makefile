@@ -1,5 +1,5 @@
 CFLAGS = -march=i486 -m32 -nostdlib -fno-pic -fno-builtin
-OBJS = bootpack.c nasmfunc.o ../lib/hankaku.c ../lib/mysprintf.c ../lib/dsctbl.c \
+OBJS = bootpack.c nasmfunc.o ../lib/hankaku.c ../lib/mysprintf.c dsctbl.c \
 ../lib/graphic.c ../lib/int.c ../lib/fifo.c ../lib/keyboard.c ../lib/mouse.c \
 ../lib/memory.c ../lib/sheet.c ../lib/timer.c ../lib/mtask.c \
 ../lib/window.c console.c ../lib/file.c ../lib/stdlib.c
@@ -8,8 +8,8 @@ IMGNAME  = ../../haribote.img
 VBOX     = /mnt/c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe
 NASMFILE = nasmfunc.asm
 INCLUDE := bootpack.c
-ASMAPPS := hello.asm hello2.asm crack2.asm crack3.asm crack4.asm crack5.asm crack6.asm
-CAPPS := a.c hello3.c crack1.c
+ASMAPPS := hello.asm hello2.asm
+CAPPS := a.c hello3.c bug1.c
 APPS := $(patsubst %.asm,%.hrb,$(ASMAPPS)) $(patsubst %.c,%.hrb,$(CAPPS)) $(INCLUDE)
 # 別のディレクトリのソース達をもってくる
 VPATH = src:../app/ src:../
@@ -32,7 +32,7 @@ default :
 # Cで書いたAppをコンパイルする
 %.hrb: %.c a_asm.o ../app.ls Makefile
 	gcc $< $(CFLAGS) -O0 -c -o $*.o
-	ld -m elf_i386 -o $@ --oformat=binary -e __start -T ../app.ls a_asm.o $*.o
+	ld -m elf_i386 -Map=$*.map -o $@ --oformat=binary -e __start -T ../app.ls a_asm.o $*.o
 
 # ASMで書いたAppをつくる
 %.hrb: %.asm Makefile
@@ -57,7 +57,7 @@ img :
 	make -r haribote.img
 
 clean :
-	rm *.bin *.lst *.hrb *.sys *.o
+	rm *.bin *.lst *.hrb *.sys *.o *.img
 
 # VirtualBox
 vdel:
