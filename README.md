@@ -1,7 +1,5 @@
 # 30日OS
 
-<https://github.com/kamaboko123/30daysOS>
-
 ## 1日目
 
 - フロッピーなんてないんだけど...
