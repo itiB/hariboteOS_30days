@@ -2,7 +2,7 @@
 
 23日目
 
-![day23](img/day23_2020-03-04.png)
+![day23](img/day24_2020-03-07.png)
 
 ## 1日目
 
@@ -194,6 +194,29 @@
 - まーたライブラリ使ってる...`rand()`...検索したら出てきた
   - なるほどなーって感じだ
 - hはアプリ追加しただけだからfのなかでできる
+
+## 24日目
+
+- キーボードの割り当て確認URL <http://oswiki.osask.jp/?%28AT%29keyboard>
+- gで`noodle.c`がコンパイルできない...
+  - `sprintf`とかは`stdlib.h`ファイルに入れて管理することにした
+
+```c
+gcc ../tests/noodle.c -march=i486 -m32 -nostdlib -fno-pic -fno-builtin -O0 -c -o noodle.o
+ld -T ../app.ls -m elf_i386 -o noodle.hrb noodle.o a_asm.o mysprintf.o
+ld: section .data VMA [0000000000000400,0000000000000414] overlaps section .text VMA [0000000000000030,00000000000004a2]
+Makefile:39: recipe for target 'noodle.hrb' failed
+make: *** [noodle.hrb] Error 1
+```
+
+- リンカスクリプトのdataサイズ大きくすればいいのかな...あんまわかんないけど
+  - `.data 0x0500 : AT ( ADDR(.text) + SIZEOF(.text) ) {`って`0x0400`だったとこを`0x0500`にしたらコンパイルできた
+  - と思ったらApp動かなかった...
+  - `LONG(0x0500)          /* 12 : スタック初期値＆.data転送先 */`こっちも0x500に書き換えなきゃ行けなかった，そりゃ行方不明になるわ
+- タイマ1秒進んで動かないんだけど
+  - `cons.time`に直していったらできた
+- 参考にしている
+  - <https://github.com/wisteria0410ss/os>
 
 ## 改修ポイント
 
