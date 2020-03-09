@@ -2,7 +2,7 @@
 
 23日目
 
-![day23](img/day24_2020-03-07.png)
+![day23](img/day25_2020-03-09.png)
 
 ## 1日目
 
@@ -217,6 +217,16 @@ make: *** [noodle.hrb] Error 1
   - `cons.time`に直していったらできた
 - 参考にしている
   - <https://github.com/wisteria0410ss/os>
+
+## 25日目
+
+最近これ自分用としてはわかりにくいからgitのhistoryで管理すればよかったな...って思うんですよ...
+
+- a bewp音がVirtualBoxだと出るのかわからん...とりあえず出ない
+  - あってることにして進める
+- fで`task`構造体をいじったので`lib`の`bootpack.h`のinclude先を変更している．
+- fからgでファイル分けるの忘れた
+- i 動くくね...???
 
 ## 改修ポイント
 
