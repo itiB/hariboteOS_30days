@@ -233,6 +233,20 @@ make: *** [noodle.hrb] Error 1
 - a 遅いか...???
 - またgで`.h`のなかの構造体をいじるので`bootpack.h`をつなぎ直す必要あり
 
+## 27日目
+
+- c なんかすでに保護されてるけど．．．
+- apiを分割してコンパイルした実行ファイルと比較してみる
+  - `-rwxrwxrwx 1 itib itib   150 Mar 11 19:52 hello3_in_a_asm.hrb`
+  - `-rwxrwxrwx 1 itib itib   553 Mar 11 19:55 hello3_in_apiXX.hrb`
+  - 差がすごい
+- f golibってなんだ...
+  - arコマンドで同じことができるらしい<https://msyksphinz.hatenablog.com/entry/2018/05/18/040000>
+- libつくったときに`.o`がAPIのディレクトリに作られるのいやだなぁ...
+- gパズルすぎてあれ...
+  - まぁできたけど今後どうするかは要検討
+  - どうファイルを変更していくか次第で構造は考える
+
 ## 改修ポイント
 
 - [ ] `ctrl + c`への対応
