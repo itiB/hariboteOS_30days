@@ -1,8 +1,8 @@
 # 30日OS
 
-29日目
+30日目
 
-![day29](img/day29_2020-03-23.png)
+![day30](img/day30_2020-03-24.png)
 
 ## 1日目
 
@@ -273,6 +273,23 @@ make: *** [noodle.hrb] Error 1
 - appサイズ云々のとこは...mallocしてる
 - invaderのとこはstackの大きなリンカスクリプトをつなげている
 
+## 30日目
+
+- 必要な標準ライブラリがまた増えた
+  - app/stdlib.hに作る
+  - 参考 <https://github.com/kamaboko123/30daysOS/blob/develop/tools/stdlibc/src/stdlibc.c>
+- いつまでたってもTviewがうまくいかないと思ったらapi_fsize.asmが間違っていた
+  - tviewで1文字しかなぜか表示されない症状
+  - `api_fsize()`で取ってきたファイルサイズが違う
+  - はじめにPushしてたけどこれデータ格納する必要とかないからいらんわ
+- Beep音だせないし...形だけつくった
+- GViewがStackよくわからなさ過ぎて結局mallocで作ってしまった．
+- 圧縮は作者独自形式でいやだったから辞めとく
+- ipl09.asmは作ったものの9シリンダまでではなくそのまま20シリンダ読んでる
+
+とりあえず完成！
+
 ## 改修ポイント
 
 - [ ] `ctrl + c`への対応
+- [ ] ファイル書き込みAPI
