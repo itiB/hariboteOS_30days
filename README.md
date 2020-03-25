@@ -4,7 +4,11 @@
 
 ![day30](img/day30_2020-03-24.png)
 
-## 1日目
+## ライセンス
+
+MIT
+
+もとのOSは著者の川合氏が[KL-01](https://osdn.net/projects/hige/docs/license/ja/1/license.html)で公開している
 
 - フロッピーなんてないんだけど...
   - VirtualBoxでつくるqiita
